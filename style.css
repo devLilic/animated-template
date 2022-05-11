@@ -1,0 +1,139 @@
+:root {
+    --item-color-1: #613E55;
+    --item-color-2: #BCBDBC;
+    /*--item-color-3: #AAAA39*/
+    /*--item-color-4: #2D882D;*/
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/* Menu Icon Animation */
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change.bar1 {
+    margin-left: 1px;
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change.bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change.bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.change {
+    transition: all 0.5s ease;
+}
+
+/*Mobile menu*/
+.menu-mobile {
+    color: #ffffff;
+    transform: translate(100%);
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-mobile.active {
+    transform: translate(0);
+}
+
+/* Main menu (is part of Mobile menu) */
+.menu-mobile-main > li:nth-child(1) {
+    background-color: var(--item-color-1);
+}
+
+.menu-mobile-main > li:nth-child(2) {
+    background-color: var(--item-color-2);
+}
+
+.menu-mobile-main > li:nth-child(3) {
+    background-color: var(--item-color-1);
+}
+
+.menu-mobile-main > li:nth-child(4) {
+    background-color: var(--item-color-2);
+}
+
+.menu-mobile-main > li:nth-child(5) {
+    background-color: var(--item-color-1);
+}
+
+.menu-mobile-main > li:nth-child(6) {
+    background-color: var(--item-color-2);
+}
+
+@media screen and (min-width: 1024px){
+    .menu-mobile{
+        transform: none;
+        height: 62px !important;
+    }
+    .menu-mobile-main{
+        height: auto !important;
+    }
+    .menu-mobile-main > li{
+        margin: 0 1rem;
+        background-color: transparent !important;
+        transform: none !important;
+    }
+    .menu-mobile-main > li:hover:before{
+        display: none !important;
+    }
+    .menu-mobile-social li a{
+        margin: 0;
+    }
+}
+
+.menu-mobile-main > li {
+    position: relative;
+    height: 20%;
+    transform: translate(100%);
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-mobile-main > li.active {
+    transform: translate(0);
+}
+
+.menu-mobile-main > li a {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-mobile-main > li:before {
+    content: "";
+    width: 80px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: none;
+}
+
+.menu-mobile-main > li:hover:before {
+    display: block;
+}
+
+.menu-mobile-main > li:last-child:before {
+    display: none
+}
+
+
+.menu-mobile-social a{
+    margin: 0 1rem;
+}
